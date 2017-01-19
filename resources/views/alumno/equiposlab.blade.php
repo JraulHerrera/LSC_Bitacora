@@ -65,7 +65,7 @@
                         <i class="ion-monitor text-custom"></i>
                     </div>
                     <div class="text-right">
-                        <h5 class="text-dark"><b>Equipo{{ $lab->n_equipo }}</b>&nbsp;&nbsp;&nbsp; 
+                        <h5 class="text-dark"><b>Equipo{{ $lab->nombre}}</b>&nbsp;&nbsp;&nbsp; 
                         <?php
                             if($lab->estado==1)
                             {
