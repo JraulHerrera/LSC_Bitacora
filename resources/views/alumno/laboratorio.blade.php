@@ -40,7 +40,7 @@
                                                    @if($lab->estado==0)
                                                     <span class="mini-stat-icon bg-primary"><i class="fa  fa-institution text-white"></i></span>
                                                     <div class="mini-stat-info text-right text-dark">
-                                                        <span class="counter text-dark" data-plugin="counterup">Libre  <input type='radio' id='inlineRadio1' value='{{$lab->id}}' name='id_labo' checked=""></span>
+                                                        <span class="counter text-dark" data-plugin="counterup">Libre</span>
                                                        
                                                     @else
                                                     <span class="mini-stat-icon bg-danger"><i class="fa  fa-institution text-white"></i></span>
