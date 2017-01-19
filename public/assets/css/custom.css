@@ -1,0 +1,31 @@
+.btn-usuario
+{
+	float: right;
+}
+
+.fixed-table-container
+{
+    border: none !important;
+}
+
+.mdlcustm
+{
+    width: 400px;
+}
+
+.editbtn
+{
+	text-align: center;
+}
+
+.btn-green
+{
+	background-color: #5FBEAA !important;
+    border: 1px solid #5FBEAA !important;
+    color: white;
+}
+
+.editbtn i
+{
+	cursor: pointer;
+}
