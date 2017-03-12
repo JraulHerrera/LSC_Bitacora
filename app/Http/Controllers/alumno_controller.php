@@ -29,7 +29,14 @@ class alumno_controller extends Controller
         ->select('docente.*')    
         ->whereactivo('1')->get();
 
-      return View::make('alumno.laboratorio',compact('laboratorios','docentes', 'actividad'));        
+     $session = DB::table('actividad_alumno')
+        ->join('equipo', 'equipo.id','=','actividad_alumno.id_equipo')
+        ->join('laboratorio', 'laboratorio.id','=','actividad_alumno.id_laboratorio')
+          ->select('actividad_alumno.*','equipo.nombre as name', 'laboratorio.nombre as labname')
+           ->where('actividad_alumno.estado','=', 1)
+           ->where('actividad_alumno.matricula','=', Auth::user()->idUsuario)
+          ->first();
+      return View::make('alumno.laboratorio',compact('laboratorios','docentes', 'actividad','session'));         
     }
 
     public function historial(){

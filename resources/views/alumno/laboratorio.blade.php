@@ -32,6 +32,23 @@
     <div style="background-color: white;">
         <br>
         <div class="container"> <br>
+        <div class="row">
+        <div class="col-md-10">
+        </div>
+        <div class="col-md-1">
+        </div>
+        
+        <div class="col-md-1">
+            @if(isset($session))
+             {!!Form::open(['action'=>'equipos_controller@stopsession','method'=>'POST'])!!}
+                <input type="hidden" name="idlab" >
+                <input type="hidden" name="idalum" value="{{ Auth::user()->idUsuario }}">
+                {!!Form::submit('Detener',['class'=>'btn btn-danger waves-light'])!!}
+             {!!Form::close()!!}  
+            @endif
+        </div>
+    </div>
+             @if(!isset($session))
             
                                             @foreach($laboratorios as $lab)
                                         <a href="/getequipo/{{$lab->id}}">
@@ -80,6 +97,13 @@
                                             </div>
                                         </a>                                                  
                                     @endforeach
+                                    @else
+    <div class="text-center">
+        <h1>Tienes iniciado sessión en un Equipo</h1>
+        <h3><b>LABORATORIO: </b>{{ $session->labname }}</h3>
+        <h3><b>EQUIPO: </b>{{ $session->name }}</h3>
+    </div>
+    @endif
         </div>
     </div>
 </div>
